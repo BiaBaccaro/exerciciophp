@@ -6,29 +6,32 @@
     <title>Document</title>
 </head>
 <body>
-<?php
-// Função para obter a idade do usuário
-function obterIdade() {
-    echo "Digite a sua idade: ";
-    $idade = intval(readline());
-    return $idade;
-}
 
-// Obtém a idade do usuário
-$idade = obterIdade();
+    <h1>Operadores Lógicos</h1>
 
-// Verificar a idade e exibir a mensagem apropriada
-if ($idade < 16) {
-    echo "Você não pode votar.\n";
-} elseif ($idade >= 16 && $idade <= 18) {
-    echo "O voto é facultativo.\n";
-} elseif ($idade >= 19 && $idade <= 65) {
-    echo "O voto é obrigatório.\n";
-} else {
-    echo "O voto é facultativo.\n";
-}
-?>
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        
+        $idade = intval($_POST["idade"]);
 
+        if ($idade < 16) {
+            $mensagem = "Você não pode votar.";
+        } elseif ($idade >= 16 && $idade <= 18) {
+            $mensagem = "O voto é facultativo.";
+        } elseif ($idade >= 19 && $idade <= 65) {
+            $mensagem = "O voto é obrigatório.";
+        } else {
+            $mensagem = "O voto é facultativo.";
+        }
 
+        echo "$mensagem";
+    }
+    ?>
+
+    <form method="post">
+        <label for="idade">Digite a sua idade:</label>
+        <input type="number" id="idade" name="idade" required>
+        <button type="submit">Verificar</button>
+    </form>
 </body>
 </html>
