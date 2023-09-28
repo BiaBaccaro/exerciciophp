@@ -1,0 +1,17 @@
+body{
+    background-color: rgb(249, 230, 208);
+}
+
+h1{
+    color: rgb(255, 140, 0);
+    font-size: 3em;
+}
+
+button{
+    border-radius: 5px;
+}
+
+.p{
+    text-align: center;
+    font-size: 2em;
+}
