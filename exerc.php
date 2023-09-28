@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <h1 align= "center">Operadores Lógicos</h1>
+    <h1 align= "center">Votação</h1>
     
     <div class="p">
     <?php
