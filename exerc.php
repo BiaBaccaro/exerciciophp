@@ -10,12 +10,11 @@
     <h1>Operadores Lógicos</h1>
 
     <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        
-        $idade = intval($_POST["idade"]);
+    
+        $idade = ($_POST["idade"]);
 
         if ($idade < 16) {
-            $mensagem = "Você não pode votar.";
+            $mensagem = "Não pode votar.";
         } elseif ($idade >= 16 && $idade <= 18) {
             $mensagem = "O voto é facultativo.";
         } elseif ($idade >= 19 && $idade <= 65) {
@@ -25,7 +24,6 @@
         }
 
         echo "$mensagem";
-    }
     ?>
 
     <form method="post">
